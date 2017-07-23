@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+@import url("css/animate.css");
+
+/*----------------------- GLOBAL ----------------------------------*/
+*{
+	font-family: 'Open Sans', sans-serif;
+	gfont-family: 'Ubuntu', sans-serif;
+}
+body, html, #site-wrapper {
+	/* important */
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+#header {
+	background-color: rgba(0,0,0,0.5);
+}
+h1, p  {
+	margin: 0;
+	color: #fff;
+}
+h1,h2 {
+	margin: 0;
+}
+.cd-fixed-bg {
+	position: relative;
+	min-height: 100%;
+	background-size: cover;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+ 
+.cd-bg-1 {
+  background-image: url("img/DSCF1807.JPG");
+}
+.cd-bg-2 {
+  background-image: url("img/lightsout.jpg");
+}
+.cd-bg-3 {
+  background-image: url("img/moviefinder.jpg");
+}
+.cd-bg-4 {
+  background-image: url("img/todo.jpg");
+}
+
+.cd-container {
+	padding: 15px;
+	color: #fff;
+	background-color: rgba(0,0,0,0.5);
+	text-align: center;
+	min-height: 100px;
+}
+.cd-bg-1 .cd-container p {
+	display: none;
+}
+.case-overlay .cd-container p {
+	font-size: 15px;
+}
+.cd-container p:first-letter {
+	font-size: 2em;
+	color: #c51c25;
+	margin-right: 5px;
+}
+.case-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(255,255,255,0.2);
+	
+}
+.case-overlay, .cd-bg-1 {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+#header {
+	padding: 0 15px;
+}
+/*------------------------ END GLOBAL ------------------------------*/
+
+/*------------------------ SITE NAVIGATION -------------------------*/
+
+.sitenav-lg {
+	display: none;
+}
+.sitenav {
+	box-sizing: border-box;
+	background-color: #000;
+	padding: 50px;
+	height: 100vh;
+	margin-left: -100%;
+	overflow: hidden;
+	z-index: 10;
+}
+.sitenav-show {
+	margin: 0;
+}
+.sitenav, .sitenav-show {
+	transition: all .2s ease-in-out;
+}
+.sitenav ul {
+	padding: 0;
+	text-align: center;
+	list-style-type: none;
+}
+.sitenav a {
+	color: #fff;
+	font-size: 1.8em;
+	text-decoration: none;
+}
+.sitenav, .nav-btn-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+.nav-btn-container {
+	padding: 5px 15px;
+	z-index: 11;
+}
+.nav-btn-container-hidden {
+	margin-top: -63px;
+}
+.nav-btn-container, .nav-btn-container-hidden {
+	transition: all .3s ease-in-out;
+}
+.nav-btn-container > div {
+	display: -webkit-flex;
+  display: flex;
+	-webkit-align-content: center;
+  align-content: center;
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
+}
+#logo span {
+	color: #fff;
+	display: inline-block;
+	font-family: 'Dodger Condensed';
+	font-size: 46px;
+	letter-spacing: 5px;
+}
+#logo span::first-letter, #swing i {
+	color: #b52b19;
+}
+
+/*---------------------- END SITE NAVIGATION -----------------------*/
+
+/*---------------------- MOBILE NAVIGATION BUTTON ------------------*/
+
+#nav-icon {
+  height: 30px;
+  position: relative;
+  width: 40px;
+  top:12px;
+  right: 30px;
+  background-color: transparent;
+  padding: 5px;
+  outline-color: transparent;
+  border: 0;
+  display: inline-block;
+}
+.open {
+  z-index: 11;
+}
+#nav-icon span {
+  background: #fff;
+  display: block;
+  height: 4px;
+  opacity: 1;
+  position: absolute;
+  width: 50%;
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+#nav-icon span:nth-child(even) {
+  border-radius: 0 2px 2px 0;
+  left: 50%;
+}
+
+#nav-icon span:nth-child(odd) {
+  border-radius: 2px 0 0 2px;
+  left:0px;
+}
+
+#nav-icon span:nth-child(1), #nav-icon span:nth-child(2) {
+  top: 0px;
+}
+
+#nav-icon span:nth-child(3), #nav-icon span:nth-child(4) {
+  top: 11px;
+}
+
+#nav-icon span:nth-child(5), #nav-icon span:nth-child(6) {
+  top: 22px;
+}
+
+#nav-icon.open span:nth-child(1),#nav-icon.open span:nth-child(6) {
+  -webkit-transform: rotate(225deg);
+  transform: rotate(225deg);
+}
+
+#nav-icon.open span:nth-child(2),#nav-icon.open span:nth-child(5) {
+  -webkit-transform: rotate(-225deg);
+  transform: rotate(-225deg);
+}
+
+#nav-icon.open span:nth-child(1) {
+  left: 5px;
+  top: 6px;
+}
+
+#nav-icon.open span:nth-child(2) {
+  left: calc(50% - 5px);
+  top: 6px;
+}
+
+#nav-icon.open span:nth-child(3) {
+  left: -50%;
+  opacity: 0;
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+#nav-icon.open span:nth-child(4) {
+  left: 100%;
+  opacity: 0;
+  -webkit-transform: rotate(-180deg);
+  transform: rotate(-180deg);
+}
+
+#nav-icon.open span:nth-child(5) {
+  left: 5px;
+  top: 16px;
+}
+
+#nav-icon.open span:nth-child(6) {
+  left: calc(50% - 5px);
+  top: 16px;
+}
+
+/*---------------------- END MOBILE NAVIGATION BUTTON --------------*/
+
+@media only screen and (min-width: 1025px) {
+	#nav-icon {
+		display: none;
+	}
+	.sitenav-lg {
+		display: block;
+	}
+	.sitenav-lg ul {
+		text-transform: uppercase;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: transparent;
+	}
+	.sitenav-lg li {
+	  float: left;
+	}
+	.sitenav-lg li a,.sitenav-lg .dropbtn {
+	  display: inline-block;
+	  color: white;
+	  text-align: center;
+	  padding: 14px 16px;
+	  text-decoration: none;
+	}
+	.sitenav-lg li.dropdown {
+	  display: inline-block;
+	}
+	.sitenav-lg .dropdown-content {
+	  display: none;
+	  position: absolute;
+	  background-color: rgba(0,0,0,0.5);
+	  min-width: 100px;
+	  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	  z-index: 1;
+	}
+	.sitenav-lg .dropdown-content a {
+	  color: #fff;
+	  padding: 8px 16px;
+	  text-decoration: none;
+	  display: block;
+	  text-align: left;
+	}
+	.sitenav-lg .dropdown-content a:first-child {
+	  padding-top: 0;
+	}
+	.sitenav-lg .dropdown:hover .dropdown-content {
+	  display: block;
+	}
+	.sitenav-lg a span:after {
+		display:block;
+		content: '';
+		border-bottom: 1px solid #fff;  
+		transform: scaleX(0);  
+		transition: transform .2s ease-in-out;
+		border-radius: 1px;
+	}
+	.sitenav-lg a span:hover:after {
+		transform: scaleX(1);
+	}
+	.sitenav-lg li:last-child {
+		margin-right: 15px;
+	}
+	.cd-bg-1 .cd-container p{
+		display: block;
+		font-size: 15px;
+	}
+}
