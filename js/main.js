@@ -2,14 +2,14 @@
 function toggleSiteNav() {
 
 	let target = document.querySelector("#nav-icon");
-	let el = document.querySelector(".sitenav"); 
+	let el = document.querySelector(".sitenav-sm"); 
 
 	target.addEventListener('click', function(){
-		if(el.classList.contains('sitenav-show')) {
-			el.classList.remove('sitenav-show');
+		if(el.classList.contains('sitenav-sm-show')) {
+			el.classList.remove('sitenav-sm-show');
 			target.classList.remove('open');
 		} else {
-			el.classList.add('sitenav-show');
+			el.classList.add('sitenav-sm-show');
 			target.classList.add('open');
 		}
 	});
@@ -18,42 +18,21 @@ function toggleSiteNav() {
 function siteNavHide() {
 	
 	let target = document.getElementsByClassName("navigation-link");
-	let el = document.querySelector(".sitenav"); 
+	let el = document.querySelector(".sitenav-sm"); 
 	let navBtn = document.querySelector("#nav-icon");
 	
 	for(var i = 0; i < target.length; i++) {
 		target[i].addEventListener('click', function(){
-			if(el.classList.contains('sitenav-show')) {
-				el.classList.remove('sitenav-show');
+			if(el.classList.contains('sitenav-sm-show')) {
+				el.classList.remove('sitenav-sm-show');
 				navBtn.classList.remove('open');
 			} else {
-				el.classList.add('sitenav-show');
+				el.classList.add('sitenav-sm-show');
 				navBtn.classList.add('open');
-				alert('borta')
 			}
 	  });
 	}
 }
-/*Visar och gömmer portfoliodropdown*/
-/*function toggleDropdown() {
-
-	let el = document.getElementById('dropdown-toggle');
-	let target = document.querySelector('#dropdown-wrapper');
-	let dropdown = document.getElementById('dropdown-container');
-	
-	el.addEventListener('mouseover', function() {
-		target.classList.add('show');
-	});
-	dropdown.addEventListener('mouseleave', function() {
-		target.classList.remove('show')
-	});
-}
-
-function hideDropdown() {
-	let target = document.querySelector('#dropdown-wrapper');
-	let dropdown = document.querySelector('#dropdown-wrapper');
-	target.classList.remove('show')
-	}*/
 /*Gömmer naigation när användaren scrollar ner*/
 function hideNavOnScroll() {
 
@@ -71,7 +50,6 @@ function hideNavOnScroll() {
 
 toggleSiteNav();
 siteNavHide();
-//toggleDropdown();
 hideNavOnScroll();
 
 
