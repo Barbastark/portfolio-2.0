@@ -38,7 +38,7 @@ body, .fixed-bg {
 }
 body {background-image: url("../img/the_wall.jpg");}
 .fixed-bg-1 {
-  background-image: url("../img/DSCF1807.JPG");
+  background-image: url("../img/jumbotron.jpg");
   justify-content: center;
   flex-direction: column;
 }
