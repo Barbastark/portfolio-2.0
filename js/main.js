@@ -1,3 +1,4 @@
+(function(){
 /*Togglar menyknapp och navigation små viewports*/
 function toggleSiteNav() {
 
@@ -37,12 +38,12 @@ function siteNavHide() {
 function hideNavOnScroll() {
 
 	let lastScrollTop = 0;
-	let siteNav = document.querySelector('.nav-btn-container');
+	let siteNav = document.querySelector('#site-header');
 
 	window.addEventListener("scroll", () => { 
 		if(window.pageYOffset > 150) {
 			let offset = window.pageYOffset; 
-			offset > lastScrollTop ? siteNav.classList.add('nav-btn-container-hidden') : siteNav.classList.remove('nav-btn-container-hidden')
+			offset > lastScrollTop ? siteNav.classList.add('site-header-hidden') : siteNav.classList.remove('site-header-hidden')
 			lastScrollTop = offset;
 		}
 	});
@@ -51,7 +52,7 @@ function hideNavOnScroll() {
 toggleSiteNav();
 siteNavHide();
 hideNavOnScroll();
-
+}());
 
 
 	

@@ -3,9 +3,8 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<title>Frontend developer</title>
-		<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css">
-		<link rel="stylesheet" href="style.css">
+		<title>Frontend Developer</title>
+		<link rel="stylesheet" href="css/bundle.css">
 	</head>
 	<body>
 	<div id="site-wrapper">
@@ -13,13 +12,13 @@
 	   <nav class="sitenav-sm">
 	 	  <ul>
 		    <li>
-		    	<a class="navigation-link" data-scroll href="#header">HEM</a>
+		    	<a class="navigation-link" data-scroll href="#">HEM</a>
+		    </li>
+		    <li >
+		    	<a class="navigation-link" data-scroll href="#about">OM MIG</a>
 		    </li>
 		    <li >
 		    	<a  class="navigation-link" data-scroll href="#portfolio">PORTFOLIO</a>
-		    </li>
-		    <li >
-		    	<a class="navigation-link" data-scroll href="#case-wrapper2">OM MIG</a>
 		    </li>
 		    <li >
 		    	<a class="navigation-link" data-scroll href="#case-wrapper3">KONTAKT</a>
@@ -27,15 +26,15 @@
 		  </ul>
 		</nav>
 		<!--JUMBOTRON-->
-		<section class="jumbotron">
-			<section class="nav-btn-container">
+		<section id="jumbotron">
+			<header id="site-header">
 		        <a id="logo" data-scroll href="#"><span>nl</span></a>
 				<nav class="sitenav-lg">
 					<ul>
 					  <li><a data-scroll href="#"><span>Start</span></a></li>
-					  <li><a href="#portfolio"><span>Portfolio</span></a></li>
-					  <li><a href="#news"><span>Om Mig</span></a></li>
-					  <li><a href="#news"><span>Kontakt</span></a></li>
+					  <li><a data-scroll href="#about"><span>Om Mig</span></a></li>
+					  <li><a data-scroll href="#portfolio"><span>Portfolio</span></a></li>
+					  <li><a data-scroll href="#news"><span>Kontakt</span></a></li>
 					</ul>
 				</nav>
 	          	<button id="nav-icon">
@@ -46,18 +45,30 @@
 		           <span></span>
 		           <span></span>
 		        </button>
-		    </section>
-			<section class="cd-fixed-bg cd-bg-1">
-				<div class="cd-container wow fadeIn animated" data-wow-delay="0.2s" data-wow-duration="1s" >
+		    </header>
+			<section class="fixed-bg fixed-bg-1">
+				<div class="wow fadeIn animated" data-wow-delay="0.2s" data-wow-duration="1s" >
 					<h1 class="wow bounceInDown animated" data-wow-delay="0.2s" data-wow-duration="1s">NIKLAS LINDBERG</h1>
 					<h2 class="wow fadeIn animated" data-wow-delay="1.2s" data-wow-duration="1s">Frontend Utvecklare</h2>
-					<p class="wow fadeInDown animated" data-wow-delay="0.4s" data-wow-duration="1s">Jag heter Niklas Lindberg och just nu
-					behöver jag lite text här</p>
+					<p class="wow fadeInDown animated" data-wow-delay="0.4s" data-wow-duration="1s">Jag heter Niklas Lindberg och jag är en jävla Frontend Utvecklare  och jag vill ha jobb hos er.</p>
 					<div id="swing" class="wow swing animated" data-wow-delay="2.5s" data-wow-duration="1s">
-		            	<a data-scroll href="#portfolio"><i class="fa fa-chevron-down fa-3x"></i></a>
+		            	<a data-scroll href="#about"><i class="fa fa-chevron-down fa-4x"></i></a>
 		        	</div>
 				</div>
 			</section>
+		  </section>
+		  <section id="about">
+		  	<article>
+		  		<h1>Om Mig</h1>
+		  		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore incidunt suscipit similique, dolor corrupti cumque qui incidunt suscipit similique, dolor corrupti cumque qui consectetur autem laborum fuga quas ipsam doloribus sequiLorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore incidunt suscipit similique, dolor corrupti cumque qui incidunt suscipit similique, dolor corrupti cumque qui consectetur autem laborum fuga quas ipsam doloribus sequiLorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore incidunt suscipit similique, dolor corrupti cumque qui incidunt suscipit similique, dolor corrupti cumque qui consectetur autem laborum fuga quas ipsam doloribus sequiLorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore incidunt suscipit similique, dolor corrupti cumque qui incidunt suscipit similique, dolor corrupti cumque qui consectetur autem laborum fuga quas ipsam doloribus sequiLorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore incidunt suscipit similique, dolor corrupti cumque qui incidunt suscipit similique, dolor corrupti cumque qui consectetur autem laborum fuga quas ipsam doloribus sequiLorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore incidunt suscipit similique, dolor corrupti cumque qui incidunt suscipit similique, dolor corrupti cumque qui consectetur autem laborum fuga quas ipsam doloribus sequiLorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore incidunt suscipit similique, dolor corrupti cumque qui incidunt suscipit similique, dolor corrupti cumque qui consectetur autem laborum fuga quas ipsam doloribus sequi</p>
+		  	</article>	
+		  </section>
+		  <section id="tech-icons">
+		  	<div>
+			  	<i class="icon-html5"></i>
+			  	<i class="icon-javascript"></i>
+			  	<i class="icon-css3"></i>
+		  	</div>
 		  </section>
 		  <!-- PORTFOLIO -->
 		  <section id="portfolio">
@@ -65,102 +76,101 @@
 		  	<div id="case-wrapper">
 		  		<div>
 				  	<h1>Portfolio</h1>
-				  	
-				 </div>
+				</div>
 		  	<article class="portfolio-item">
-		  		<figure class="portfolio-image">
+		  		<figure>
 		  			<a href="#">
-		  				<img src="img/lights_out_desktop.png" alt=""/>
-		  				<div class="img-overlay"></div>
+		  				<img src="img/friendoapp.png" alt=""/>
+		  				<div class="overlay"></div>
 		  			</a>
 		  		</figure>
-		  		<div class="portfolio-description">
-		  			<h2 style="font-size: 18px">Lights Out</h2>
-		  			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore incidunt suscipit similique, dolor corrupti cumque qui </p>
-		  		</div>
-		  	  </article>
-		  	  <article class="portfolio-item">
-		  		<figure class="portfolio-image">
-		  			<a href="#">
-		  				<img src="img/lights_out_desktop.png" alt=""/>
-		  				<div class="img-overlay"></div>
-		  			</a>
-		  		</figure>
-		  		<div class="portfolio-description">
-		  			<h2 style="font-size: 18px">Lights Out</h2>
+		  		<div>
+		  			<h2>Friendo Events</h2>
 		  			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore incidunt suscipit similique, dolor corrupti cumque qui  fuga quas ipsam doloribus sequi</p>
 		  		</div>
-		  	  </article>	
-		  	  <article class="portfolio-item">
-		  		<figure class="portfolio-image">
-		  			<a href="#">
-		  				<img src="img/lights_out_desktop.png" alt=""/>
-		  				<div class="img-overlay"></div>
-		  			</a>
-		  		</figure>
-		  		<div class="portfolio-description">
-		  			<h2 style="font-size: 18px">Lights Out</h2>
-		  			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore incidunt suscipit similique, dolor corrupti cumque qui incidunt suscipit similique, dolor corrupti cumque qui consectetur autem laborum fuga quas ipsam doloribus sequi</p>
-		  		</div>
-		  	  </article>	
-		  	  <article class="portfolio-item">
-		  		<figure class="portfolio-image">
-		  			<a href="#">
-		  				<img src="img/lights_out_desktop.png" alt=""/>
-		  				<div class="img-overlay"></div>
-		  			</a>
-		  		</figure>
-		  		<div class="portfolio-description">
-		  			<h2 style="font-size: 18px">Lights Out</h2>
-		  			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.  </p>
-		  		</div>
 		  	  </article>
 		  	  <article class="portfolio-item">
-		  		<figure class="portfolio-image">
+		  		<figure>
 		  			<a href="#">
-		  				<img src="img/lights_out_desktop.png" alt=""/>
-		  				<div class="img-overlay"></div>
+		  				<img src="img/nikimember.png" alt=""/>
+		  				<div class="overlay"></div>
 		  			</a>
 		  		</figure>
-		  		<div class="portfolio-description">
-		  			<h2 style="font-size: 18px">Lights Out</h2>
+		  		<div>
+		  			<h2>Nikimember</h2>
 		  			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore incidunt suscipit similique, dolor corrupti cumque qui ipsum dolor sit amet, consectetur adipisicing elit. Dolore incidunt suscipit similique, dolor corrupti cumque qui consectetur autem laborum fuga quas ipsam doloribus sequi</p>
 		  		</div>
 		  	  </article>
 		  	  <article class="portfolio-item">
-		  		<figure class="portfolio-image">
+		  		<figure>
 		  			<a href="#">
-		  				<img src="img/lights_out_desktop.png" alt=""/>
-		  				<div class="img-overlay"></div>
+		  				<img src="img/bubbles.png" alt=""/>
+		  				<div class="overlay"></div>
 		  			</a>
 		  		</figure>
-		  		<div class="portfolio-description">
-		  			<h2 style="font-size: 18px">Lights Out</h2>
+		  		<div>
+		  			<h2>Random Bubbles</h2>
 		  			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore incidunt suscipit similique, dolor corrupti cumque qui </p>
 		  		</div>
 		  	  </article>	
 		  	  <article class="portfolio-item">
-		  		<figure class="portfolio-image">
+		  		<figure>
 		  			<a href="#">
-		  				<img src="img/lights_out_desktop.png" alt=""/>
-		  				<div class="img-overlay"></div>
+		  				<img src="img/key_code.png" alt=""/>
+		  				<div class="overlay"></div>
 		  			</a>
 		  		</figure>
-		  		<div class="portfolio-description">
-		  			<h2 style="font-size: 18px">Lights Out</h2>
+		  		<div>
+		  			<h2>Key/Charcode Generator</h2>
 		  			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore incidunt suscipit similique, dolor corrupti cumque qui consectetur autem laborum fuga quas ipsam doloribus sequi Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore </p>
 		  		</div>
 		  	  </article>	
 		  	  <article class="portfolio-item">
-		  		<figure class="portfolio-image">
+		  		<figure>
 		  			<a href="#">
-		  				<img src="img/lights_out_desktop.png" alt=""/>
-		  				<div class="img-overlay"></div>
+		  				<img src="img/movie_night.png" alt=""/>
+		  				<div class="overlay"></div>
 		  			</a>
 		  		</figure>
-		  		<div class="portfolio-description">
-		  			<h2 style="font-size: 18px">Lights Out</h2>
+		  		<div>
+		  			<h2>Movie Night</h2>
 		  			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore incidunt suscipit similique, dolor corrupti cumque qui  ipsam doloribus sequi</p>
+		  		</div>
+		  	  </article>
+		  	  <article class="portfolio-item">
+		  		<figure>
+		  			<a href="#">
+		  				<img src="img/lights_out.png" alt=""/>
+		  				<div class="overlay"></div>
+		  			</a>
+		  		</figure>
+		  		<div>
+		  			<h2>Lights Out</h2>
+		  			<p> </p>
+		  		</div>
+		  	  </article>
+		  	  <article class="portfolio-item">
+		  		<figure>
+		  			<a href="#">
+		  				<img src="img/todo.png" alt=""/>
+		  				<div class="overlay"></div>
+		  			</a>
+		  		</figure>
+		  		<div>
+		  			<h2>Todo Lista</h2>
+		  			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore incidunt suscipit similique, dolor corrupti cumque qui incidunt suscipit similique, dolor corrupti cumque qui consectetur autem laborum fuga quas ipsam doloribus sequi</p>
+		  		</div>
+		  	  </article>	
+		  	  <article class="portfolio-item">
+		  		<figure>
+		  			<a href="#">
+		  				<img src="img/movie_finder.png" alt=""/>
+		  				<div class="overlay"></div>
+		  			</a>
+		  		</figure>
+		  		<div>
+		  			<h2>The Ultimate Movie Finder</h2>
+		  			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.  </p>
 		  		</div>
 		  	  </article>
 		  	  </div>			
@@ -173,6 +183,7 @@
 		<!-- CUSTOM SCRIPTS-->
 		<script src="js/main.js"></script>
 		<!-- PLUGINS -->
+		<script src="https://use.fontawesome.com/18d0d4a585.js"></script>
 		<script src="js/smooth-scroll.js"></script>
 		<script>
 		    smoothScroll.init();
