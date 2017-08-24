@@ -9,6 +9,15 @@
 body, html, #site-wrapper, #jumbotron {
 	height: 100%;
 }
+body, .fixed-bg {
+	position: relative;
+	min-height: 100%;
+	background-size: cover;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: 8% center;
+}
+body {background-image: url("../img/the_wall.jpg");}
 html {font-size: 10px;}
 h1 {font-size: 4rem;}
 h2 {font-size: 2.4rem;}
@@ -24,41 +33,56 @@ h1, h2 ,p{
 #logo span::first-letter, #swing i, .fixed-bg-1 p:first-letter, #tech-icons i {
 	color: #be2835;
 }
-header, .fixed-bg-1, #tech-icons > div {
+header, .fixed-bg-1, #tech-icons > div, #nav-btn-container {
 	display: -webkit-flex;
   display: flex;
 }
-body, .fixed-bg {
-	position: relative;
-	min-height: 100%;
-	background-size: cover;
-	background-attachment: fixed;
-	background-repeat: no-repeat;
-	background-position: 8% center;
+#nav-btn-container {
+	width: 40px;
+  height: 100%;
 }
-body {background-image: url("../img/the_wall.jpg");}
-.fixed-bg-1 {
-  background-image: url("../img/jumbotron.jpg");
-  justify-content: center;
-  flex-direction: column;
+#nav-btn-container, .fixed-bg-1 {
+	flex-direction: column;
+  -webkit-flex-direction: column;
+	justify-content: center;
+	-webkit-justify-content:center;
 }
-.fixed-bg-1 > div {
-	padding: 15px;
-	background-color: rgba(0,0,0,0.5);
-	text-align: center;
-	min-height: 100px;
+.site-header {
+	box-sizing: border-box;
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
+	background-color: rgba(0,0,0,0.2);
+	border-bottom: 1px solid #fff;
+	height: 55px;
+	width: 100%;
+	padding: 5px 15px;
+	z-index: 11;
 }
-.fixed-bg-1 p {display: none;}
-.fixed-bg-1 p:first-letter {
-	font-size: 3.4rem;
-	font-weight: bold;
-	margin-right: 2px;
+.site-header-hide {
+	border-bottom: 1px solid rgba(255,255,255,0.0);
+	background-color: transparent;
+	transition: all.3s ease-in-out;
+}
+.site-header, .sitenav-sm {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+.site-header-hidden {margin-top: -63px;}
+.site-header, .site-header-hidden {transition: all .2s ease-in-out;}
+#logo span {
+	color: #fff;
+	display: inline-block;
+	font-family: 'Dodger Condensed';
+	font-size: 40px;
+	height: 100%;
+	letter-spacing: 5px;
 }
 .sitenav-lg {display: none;}
 .sitenav-sm {
 	box-sizing: border-box;
-	background-color: #000;
-	padding: 50px;
+	background-color: #add0ec;
 	height: 100vh;
 	margin-left: -100%;
 	overflow: hidden;
@@ -68,40 +92,35 @@ body {background-image: url("../img/the_wall.jpg");}
 .sitenav-sm, .sitenav-sm-show {transition: all .2s ease-in-out;}
 .sitenav-sm ul {
 	padding: 0;
-	text-align: center;
+	width: 200px;
 	list-style-type: none;
+	line-height: 1.8;
+	display: block;
+	margin: 125px auto 0 auto;
 }
 .sitenav-sm a {
 	color: #fff;
-	font-size: 1.8rem;
+	font-size: 35px;
 	text-decoration: none;
 }
-.sitenav-sm, #site-header {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
+.sitenav-sm i {
+	width: 40px;
 }
-#site-header {
-	padding: 5px 15px;
-	z-index: 11;
+.fixed-bg-1 {
+  background-image: url("../img/jumbotron.jpg");
 }
-.site-header-hidden {margin-top: -63px;}
-#site-header, .site-header-hidden {transition: all .3s ease-in-out;}
-#site-header {
-	-webkit-justify-content: space-between;
-	justify-content: space-between;
-	background-color: rgba(0,0,0,0.5);
+.fixed-bg-1 > div {
+	padding: 15px;
+	background-color: rgba(0,0,0,0.3);
+	text-align: center;
+	min-height: 100px;
 }
-#logo span {
-	color: #fff;
-	padding-top: 2px;
-	display: inline-block;
-	font-family: 'Dodger Condensed';
-	font-size: 40px;
-	letter-spacing: 5px;
+.fixed-bg-1 p {display: none;}
+.fixed-bg-1 p:first-letter {
+	font-size: 3.4rem;
+	font-weight: bold;
+	margin-right: 2px;
 }
-
 /*---------------------- END GLOBAL AND JUMBOTRON  -----------------------*/
 /*---------------------------- ABOUT AND PORTFOLIO -------------------------------*/
 #about, #portfolio {
@@ -109,6 +128,7 @@ body {background-image: url("../img/the_wall.jpg");}
 	width: 100%;
 	padding: 40px 0
 }
+#about p {line-height: 1.5;}
 #tech-icons {
 	width: 100%;
 	padding-top: 20px;
@@ -126,6 +146,7 @@ body {background-image: url("../img/the_wall.jpg");}
 	margin: 0 auto;
 }
 #about h1, #case-wrapper h1 {
+	text-align: center;
 	width: 170px;
 	border-bottom: 1px solid #c51c25;
 	padding-bottom: 15px;
@@ -178,26 +199,28 @@ body {background-image: url("../img/the_wall.jpg");}
 
 
 @media only screen and (min-width: 800px) {
-	#nav-icon {display: none;}
+	#nav-btn-container {display: none;}
 	.sitenav-lg {display: block;}
 	.sitenav-lg ul {
 		text-transform: uppercase;
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    height: 100%;
     background-color: transparent;
 	}
 	.sitenav-lg li {
+		box-sizing: border-box;
   	float: left;
-  	padding-top: 2px;
+  	height: 100%;
 	}
 	.sitenav-lg li a {
     display: inline-block;
-    color: white;
+    color: #fff;
+    height: 1.8rem;
     text-align: center;
     font-size: 1.8rem;
-    padding: 10px 10px;
+    padding: 13.5px 10px;
     text-decoration: none;
 	}
 	.sitenav-lg a span:after {
@@ -209,7 +232,6 @@ body {background-image: url("../img/the_wall.jpg");}
 		border-radius: 1px;
 	}
 	.sitenav-lg a span:hover:after {transform: scaleX(1);}
-	.sitenav-lg li:last-child {margin-right: 25px;}
 	.icon-html5, .icon-css3,.icon-javascript {font-size: 120px;}
 	#case-wrapper {
 		display: -webkit-flex;
@@ -229,7 +251,6 @@ body {background-image: url("../img/the_wall.jpg");}
 		width: 100%;
 		text-align: left;
 	}
-	
 	#case-wrapper > div h1, #about article h1 {
 		padding-bottom: 15px;
 		margin: 0 0 15px 0;

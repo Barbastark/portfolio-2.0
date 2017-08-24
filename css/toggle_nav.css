@@ -1,11 +1,8 @@
 #nav-icon {
-  height: 30px;
+  height: 27px;
   position: relative;
-  width: 40px;
-  top:12px;
-  right: 30px;
+  width: 100%;
   background-color: transparent;
-  padding: 5px;
   outline-color: transparent;
   border: 0;
   display: inline-block;
