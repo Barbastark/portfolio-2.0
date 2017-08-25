@@ -21,11 +21,12 @@ body {background-image: url("../img/the_wall.jpg");}
 html {font-size: 10px;}
 h1 {font-size: 4rem;}
 h2 {font-size: 2.4rem;}
-p {font-size: 1.7rem;}
+p {font-size: 1.9rem;}
 h1, h2 ,p{
 	color:#373a3c;
 	font-weight: normal;
 }
+
 #jumbotron h1, #jumbotron h2, #jumbotron p  {
 	margin: 0;
 	color: #fff;
@@ -33,7 +34,7 @@ h1, h2 ,p{
 #logo span::first-letter, #swing i, .fixed-bg-1 p:first-letter, #tech-icons i {
 	color: #be2835;
 }
-header, .fixed-bg-1, #tech-icons > div, #nav-btn-container {
+.site-header, .fixed-bg-1, #tech-icons > div, #nav-btn-container {
 	display: -webkit-flex;
   display: flex;
 }
@@ -51,17 +52,16 @@ header, .fixed-bg-1, #tech-icons > div, #nav-btn-container {
 	box-sizing: border-box;
 	-webkit-justify-content: space-between;
 	justify-content: space-between;
-	background-color: rgba(0,0,0,0.2);
+	background-color: rgba(85, 138, 182,0.7);
 	border-bottom: 1px solid #fff;
 	height: 55px;
 	width: 100%;
 	padding: 5px 15px;
 	z-index: 11;
 }
-.site-header-hide {
+.site-header-fade {
 	border-bottom: 1px solid rgba(255,255,255,0.0);
 	background-color: transparent;
-	transition: all.3s ease-in-out;
 }
 .site-header, .sitenav-sm {
 	position: fixed;
@@ -70,7 +70,7 @@ header, .fixed-bg-1, #tech-icons > div, #nav-btn-container {
 	width: 100%;
 }
 .site-header-hidden {margin-top: -63px;}
-.site-header, .site-header-hidden {transition: all .2s ease-in-out;}
+.site-header, .site-header-hidden, .sitenav-sm, .sitenav-sm-show, .site-header-fade {transition: all .2s ease-in-out;}
 #logo span {
 	color: #fff;
 	display: inline-block;
@@ -82,14 +82,13 @@ header, .fixed-bg-1, #tech-icons > div, #nav-btn-container {
 .sitenav-lg {display: none;}
 .sitenav-sm {
 	box-sizing: border-box;
-	background-color: #add0ec;
+	background-color: #558ab6;
 	height: 100vh;
 	margin-left: -100%;
 	overflow: hidden;
 	z-index: 10;
 }
 .sitenav-sm-show {margin: 0;}
-.sitenav-sm, .sitenav-sm-show {transition: all .2s ease-in-out;}
 .sitenav-sm ul {
 	padding: 0;
 	width: 200px;
@@ -111,9 +110,11 @@ header, .fixed-bg-1, #tech-icons > div, #nav-btn-container {
 }
 .fixed-bg-1 > div {
 	padding: 15px;
-	background-color: rgba(0,0,0,0.3);
+	background-color: rgba(	85, 138, 182,0.7);
 	text-align: center;
 	min-height: 100px;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #fff;
 }
 .fixed-bg-1 p {display: none;}
 .fixed-bg-1 p:first-letter {
@@ -231,6 +232,7 @@ header, .fixed-bg-1, #tech-icons > div, #nav-btn-container {
 		transition: transform .2s ease-in-out;
 		border-radius: 1px;
 	}
+	.fixed-bg-1 p {display: block;}
 	.sitenav-lg a span:hover:after {transform: scaleX(1);}
 	.icon-html5, .icon-css3,.icon-javascript {font-size: 120px;}
 	#case-wrapper {
@@ -252,6 +254,7 @@ header, .fixed-bg-1, #tech-icons > div, #nav-btn-container {
 		text-align: left;
 	}
 	#case-wrapper > div h1, #about article h1 {
+		text-align: left;
 		padding-bottom: 15px;
 		margin: 0 0 15px 0;
 	}
@@ -259,11 +262,6 @@ header, .fixed-bg-1, #tech-icons > div, #nav-btn-container {
 		width: 48.5%;
 		display: inline-block;
 		margin: 15px 0;
-	}
-}
-@media only screen and (min-width: 1025px) {
- .fixed-bg-1 p{
-		display: block;
 	}
 }
 @media only screen and (min-width: 1200px) {

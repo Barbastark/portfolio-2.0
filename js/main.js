@@ -9,11 +9,11 @@ function toggleSiteNav() {
 		if(el.classList.contains('sitenav-sm-show')) {
 			el.classList.remove('sitenav-sm-show');
 			target.classList.remove('open');
-			header.classList.remove('site-header-hide')
+			header.classList.remove('site-header-fade')
 		} else {
 			el.classList.add('sitenav-sm-show');
 			target.classList.add('open');
-			header.classList.add('site-header-hide')
+			header.classList.add('site-header-fade')
 		}
 	});
 }
@@ -30,7 +30,7 @@ function siteNavHide() {
 			if(el.classList.contains('sitenav-sm-show')) {
 				el.classList.remove('sitenav-sm-show');
 				navBtn.classList.remove('open');
-				header.classList.remove('site-header-hide')
+				header.classList.remove('site-header-fade')
 			} else {
 				el.classList.add('sitenav-sm-show');
 				navBtn.classList.add('open');
