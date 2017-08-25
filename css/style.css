@@ -52,7 +52,7 @@ h1, h2 ,p{
 	box-sizing: border-box;
 	-webkit-justify-content: space-between;
 	justify-content: space-between;
-	background-color: rgba(85, 138, 182,0.7);
+	background-color: rgba(85, 138, 182, 0.9);
 	border-bottom: 1px solid #fff;
 	height: 55px;
 	width: 100%;
@@ -110,11 +110,9 @@ h1, h2 ,p{
 }
 .fixed-bg-1 > div {
 	padding: 15px;
-	background-color: rgba(	85, 138, 182,0.7);
+	background-color: rgba(85, 138, 182,0.9);
 	text-align: center;
 	min-height: 100px;
-	border-top: 1px solid #fff;
-	border-bottom: 1px solid #fff;
 }
 .fixed-bg-1 p {display: none;}
 .fixed-bg-1 p:first-letter {
@@ -178,6 +176,7 @@ h1, h2 ,p{
 	margin-bottom: 5px;
 	font-weight: bold;
 }
+.overlay {visibility: hidden;}
 .overlay {
   position:absolute;
   top: 0;
@@ -197,6 +196,20 @@ h1, h2 ,p{
 }
 .overlay:hover {opacity:1;}
 /*----------------------- END ABOUT AND PORTFOLIO ------------------*/
+/*------------------------------ FOOTER  ---------------------------*/
+footer {
+	background-color: rgba(85, 138, 182, 0.9);
+	text-align: center;
+	padding: 20px 0;
+}
+footer p, footer h2, footer i, footer a {color: #fff;}
+footer > div:nth-child(1), footer > div:nth-child(2) {
+	margin-bottom: 20px;
+}
+footer i:nth-child(1) {margin-bottom: 10px;}
+footer a {text-decoration: none;}
+/*---------------------------- END FOOTER  -------------------------*/
+
 
 
 @media only screen and (min-width: 800px) {
@@ -263,6 +276,7 @@ h1, h2 ,p{
 		display: inline-block;
 		margin: 15px 0;
 	}
+	.overlay {visibility: visible;}
 }
 @media only screen and (min-width: 1200px) {
 	#tech-icons > div {
