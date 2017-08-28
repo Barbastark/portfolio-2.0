@@ -135,7 +135,7 @@ h1, h2 ,p{
 }
 /*---------------------- END GLOBAL AND JUMBOTRON  -----------------------*/
 /*---------------------------- ABOUT AND PORTFOLIO -------------------------------*/
-#about, #portfolio {
+#about, #portfolio, #contact {
 	background-color: #fff;
 	width: 100%;
 	padding: 40px 0
@@ -157,7 +157,7 @@ h1, h2 ,p{
 	width: 95%;
 	margin: 0 auto;
 }
-#about h1, #case-wrapper h1 {
+#about h1, #case-wrapper h1, #contact h1 {
 	text-align: center;
 	width: 170px;
 	border-bottom: 1px solid #c51c25;
@@ -209,6 +209,52 @@ h1, h2 ,p{
 }
 .overlay:hover {opacity:1;}
 /*----------------------- END ABOUT AND PORTFOLIO ------------------*/
+/*--------------------------- CONTACT FORM -------------------------*/
+#contact {background-color: #f6f6f6}
+form {
+	width: 95%;
+	margin: 0 auto;
+	background-color: #f6f6f6;
+	padding: 10px;
+	box-sizing: border-box;
+}
+label {
+	font-size: 1.6rem;
+}
+input[type=text], select, textarea {
+	font-size: 1.6rem;
+  width: 100%; 
+  padding: 12px;  
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  box-sizing: border-box; 
+  margin-top: 6px; 
+  margin-bottom: 16px; 
+  outline-color: #be2835;
+    
+}
+textarea {height: 21.8rem;}
+
+input[type=submit] {
+  background-color: #be2835;
+  color: #fff;
+  font-size: 1.8rem;
+  padding: 12px 0;
+  border: 1px solid #be2835;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+
+
+input[type=submit]:hover {
+  background-color: #991320;
+  color: #fff;
+}
+input[type=submit], input[type=submit]:hover {transition: all 0.3s ease-in-out;}
+
+
+/*------------------------ END CONTACT FORM ------------------------*/
 /*------------------------------ FOOTER  ---------------------------*/
 footer {
 	background-color: rgba(85, 138, 182, 0.9);
@@ -296,15 +342,21 @@ footer a {text-decoration: none;}
 		margin: 15px 0;
 	}
 	.overlay {visibility: visible;}
+	
 }
 @media only screen and (min-width: 1200px) {
-	#tech-icons > div {
+	#case-wrapper, #about > article, #tech-icons > div, form {
 		width: 65%;
 		margin: 0 auto;
 	}
-	#case-wrapper, #about > article {
-		width: 65%;
-		margin: 0 auto;
+	form {
+		display: -webkit-box;
+	  display: -ms-flexbox;
+	  display: flex;
+	  justify-content: space-between;
+	}
+	form > div {
+		width: 49%;
 	}
 }
 @media only screen and (min-width: 1921px) {
@@ -314,6 +366,6 @@ footer a {text-decoration: none;}
 	}
 	
 	#case-wrapper > div {width: 100%;}
-	.icon-html5, .icon-css3,.icon-javascript {font-size: 150px;}
+	.icon-html5, .icon-css3, .icon-javascript {font-size: 150px;}
 }
 
