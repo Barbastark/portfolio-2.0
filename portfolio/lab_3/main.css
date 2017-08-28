@@ -1,0 +1,117 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+* {
+	font-family: 'Roboto';
+	margin: 0;
+	padding:0;
+	
+}
+
+h1 {
+	font-size: 40px;
+	letter-spacing: 10px;
+	margin: 20px 0 20px 0;
+	text-align: center;
+}
+
+input {
+	border: 1px solid grey;
+	border-radius: 5px;
+	color: grey;
+	font-size: 20px;
+	height: 30px;
+	margin-top: 10px;
+	padding: 10px;
+	width: 400px;
+}
+
+input:focus {
+	outline-color: black;
+}
+
+button {
+	background-color: black;
+	border-radius: 5px;
+	border: 0;
+	color: rgba(255,255,255,0.8);
+	font-size: 20px;
+	height: 50px;
+	letter-spacing: 5px;
+	margin-top: 10px;
+	transition: 1s ease;
+	width: 422px;
+}
+
+button:hover {
+	box-shadow: 20px 20px  50px grey;
+	cursor: pointer;
+}
+
+#wrapper {
+	margin: 0 auto;
+	width: 1200px;
+}
+
+#options {
+	float: left;
+	background-color: rgba(255,255,255,0.9);
+	box-shadow: 0 40px 40px rgba(255,255,255,0.9);
+	height: 270px;
+	display: block;
+	position: fixed;
+	width: 1200px;
+	z-index: 1000;
+}
+
+#searchtools {
+	float: left;
+	margin:0 auto;
+	text-align: center;
+	width: 1200px;
+}
+
+#textsearch{
+	background: white;
+	float: left;
+	min-height: 400px;
+	position: relative;
+	top: 290px;
+	width: 100%;
+}
+
+#textsearch img{
+	height: 285px;
+	
+	width:200px;
+	
+	
+}
+
+.movieStats {
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.container{
+	box-sizing: border-box;
+	float: left;
+	margin: 10px;
+	min-height: 500px;
+	padding: 10px;
+	width: 48%;
+}
+
+.postercontainer {
+	background-color: lightgrey;
+	box-shadow: 2px 2px 2px grey;
+	float: left;
+	margin-right: 10px;
+	height: 285px;
+	width: 200px;
+}
+
+.clearfix {
+	display: table;
+	clear: both;
+	content: "";
+}

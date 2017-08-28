@@ -159,10 +159,18 @@ h1, h2 ,p{
 }
 #about h1, #case-wrapper h1, #contact h1 {
 	text-align: center;
-	width: 170px;
-	border-bottom: 1px solid #c51c25;
-	padding-bottom: 15px;
+	letter-spacing: 5px;
 	margin: 0 auto 30px auto;
+}
+#about h1:after, #case-wrapper h1:after, #contact h1:after {
+	display:block;
+	content: '';
+	border-bottom: 2px solid #c51c25;  
+	transform: scaleX(0.2);  
+	border-radius: 1px;
+	margin: 15px auto 0 auto;
+	position: relative;
+	left: -2.5px;
 }
 .portfolio-item {
 	background-color: #f6f6f6;
@@ -331,10 +339,18 @@ footer a {text-decoration: none;}
 		width: 100%;
 		text-align: left;
 	}
-	#case-wrapper > div h1, #about article h1 {
-		text-align: left;
+	#about h1, #case-wrapper h1, #contact h1  {
+		letter-spacing: 20px;
 		padding-bottom: 15px;
-		margin: 0 0 15px 0;
+		text-align: center;
+		margin: 0 auto 15px auto;
+	}
+	#about h1:after, #case-wrapper h1:after {
+		transform: scaleX(0.15);
+		margin-left: -10px;
+	}
+	#contact h1:after {
+		transform: scaleX(0.15);
 	}
 	.portfolio-item {
 		width: 48.5%;
@@ -342,7 +358,6 @@ footer a {text-decoration: none;}
 		margin: 15px 0;
 	}
 	.overlay {visibility: visible;}
-	
 }
 @media only screen and (min-width: 1200px) {
 	#case-wrapper, #about > article, #tech-icons > div, form {
@@ -358,14 +373,22 @@ footer a {text-decoration: none;}
 	form > div {
 		width: 49%;
 	}
+	#contact h1:after {
+		transform: scaleX(0.1);
+	}
 }
 @media only screen and (min-width: 1921px) {
 	.portfolio-item {
 		width: 31.33%;
 		display: inline-block;
 	}
-	
 	#case-wrapper > div {width: 100%;}
 	.icon-html5, .icon-css3, .icon-javascript {font-size: 150px;}
+	#about h1:after {
+		transform: scaleX(0.1);
+	}
+	#contact h1:after {
+		transform: scaleX(0.07);
+	}
 }
 

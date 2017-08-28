@@ -1,0 +1,125 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+* {
+	margin:0;
+	padding:0;
+	font-family: 'Roboto';
+	box-sizing: border-box;
+}
+
+h1 {
+	color: #bdb132;
+	margin-top: 40px;
+	font-size: 1.5em;
+	font-variant: small-caps;
+	font-weight: 100;
+	letter-spacing: 5px;
+	margin-left: 10px;
+}
+
+h1:first-letter {
+	color: #bd5432;
+	font-size: 1.5em;
+}
+
+.firstHeading {
+	margin-top: 70px;
+}
+
+#wrapper {
+	margin: 20px 0 0 20px;
+	background-color: #2B547E;
+	border-radius: 5px;
+	box-shadow: 2px 2px 2px grey;
+	padding: 30px 10px 20px 10px;
+	width: 500px;
+}
+
+#todos,
+#finishedItems {
+	width: 97.5%;
+	margin: 0 auto;
+}
+
+#add {
+	float:left;
+	background-color: #2B547E;
+	margin-top: 9px;
+	width: 20px;
+	height: 20px;
+}
+
+input {
+	background-color: #E5E4E2;
+	border-radius: 2px;
+	color: black;
+	font-size: 1em;
+	margin-left: 7px;
+	width: 88%;
+	padding: 7px;
+	border: 1px solid grey;
+	float: left;
+}
+
+input:focus,
+li:focus {
+	outline-color: #bdb132;
+}
+
+li {
+	background-color:  rgba(0,0,0,0.2);
+	color: rgba(255,255,255,0.8);
+	font-size: 1em;
+	margin-top: 5px;
+	border-radius: 4px;
+	width: 74%;
+	padding: 7px;
+	list-style-type: none;
+	display: inline-block;
+	float: left;
+}
+
+.todo {
+	width: 60%;
+}
+
+button {
+	margin: 12px 5px 0 5px;
+	background-color:   #2B547E;
+	border: none;
+	float: left;
+	display: inline-block;
+	
+}
+
+#add:hover,
+button:hover {
+	cursor: pointer;
+}
+
+.tilt {
+    -webkit-transition: all 0.2s ease;
+       -moz-transition: all 0.2s ease;
+         -o-transition: all 0.2s ease;
+        -ms-transition: all 0.2s ease;
+            transition: all 0.2s ease;
+}
+ 
+.tilt:hover {
+-webkit-transform: rotate(10deg);
+   -moz-transform: rotate(10deg);
+	 -o-transform: rotate(10deg);
+	-ms-transform: rotate(10deg);
+		transform: rotate(10deg);
+}
+
+.clearfix {
+	clear: both;
+	content: "";
+	display: table;
+}
+
+img {
+	width: 20px;
+	height: 20px;
+}
