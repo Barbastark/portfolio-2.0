@@ -108,9 +108,7 @@ h1, h2 ,p{
 	font-size: 35px;
 	text-decoration: none;
 }
-.sitenav-sm i {
-	width: 40px;
-}
+.sitenav-sm i {width: 40px;}
 .fixed-bg {
   background-image: url("../img/jumbotron.jpg");
   position: relative;
@@ -138,7 +136,7 @@ h1, h2 ,p{
 #about, #portfolio, #contact {
 	background-color: #fff;
 	width: 100%;
-	padding: 40px 0
+	padding: 50px 0
 }
 #about p {line-height: 1.5;}
 #tech-icons {
@@ -152,7 +150,7 @@ h1, h2 ,p{
 }
 .icon-html5, .icon-css3, .icon-javascript {font-size: 80px;}
 #case-wrapper {width: 100%;}
-#about > article {
+#about > div {
 	text-align: center;
 	width: 95%;
 	margin: 0 auto;
@@ -160,7 +158,6 @@ h1, h2 ,p{
 #about h1, #case-wrapper h1, #contact h1 {
 	text-align: center;
 	letter-spacing: 5px;
-	margin: 0 auto 30px auto;
 }
 #about h1:after, #case-wrapper h1:after, #contact h1:after {
 	display:block;
@@ -168,7 +165,7 @@ h1, h2 ,p{
 	border-bottom: 2px solid #c51c25;  
 	transform: scaleX(0.2);  
 	border-radius: 1px;
-	margin: 15px auto 0 auto;
+	margin: 20px auto 30px auto;
 	position: relative;
 	left: -2.5px;
 }
@@ -212,25 +209,25 @@ h1, h2 ,p{
   transition: all 0.3s ease-in-out;
 }
 .portfolio-item figure img, .overlay {
-	border-top-left-radius: 3px;
+  border-top-left-radius: 3px;
   border-top-right-radius: 3px;
 }
 .overlay:hover {opacity:1;}
 /*----------------------- END ABOUT AND PORTFOLIO ------------------*/
 /*--------------------------- CONTACT FORM -------------------------*/
 #contact {background-color: #f6f6f6}
+
 form {
-	width: 95%;
-	margin: 0 auto;
-	background-color: #f6f6f6;
-	padding: 10px;
-	box-sizing: border-box;
+  width: 95%;
+  margin: 0 auto;
+  background-color: #f6f6f6;
+  padding: 10px;
+  box-sizing: border-box;
 }
-label {
-	font-size: 1.6rem;
-}
-input[type=text], select, textarea {
-	font-size: 1.6rem;
+fieldset {border: none!important;}
+label {font-size: 1.6rem;}
+input[type=text], input[type=email], select, textarea {
+  font-size: 1.6rem;
   width: 100%; 
   padding: 12px;  
   border: 1px solid #ccc; 
@@ -239,10 +236,8 @@ input[type=text], select, textarea {
   margin-top: 6px; 
   margin-bottom: 16px; 
   outline-color: #be2835;
-    
 }
 textarea {height: 21.8rem;}
-
 input[type=submit] {
   background-color: #be2835;
   color: #fff;
@@ -253,15 +248,11 @@ input[type=submit] {
   cursor: pointer;
   width: 100%;
 }
-
-
 input[type=submit]:hover {
   background-color: #991320;
   color: #fff;
 }
 input[type=submit], input[type=submit]:hover {transition: all 0.3s ease-in-out;}
-
-
 /*------------------------ END CONTACT FORM ------------------------*/
 /*------------------------------ FOOTER  ---------------------------*/
 footer {
@@ -270,9 +261,7 @@ footer {
 	padding: 20px 10px 15px 10px;
 }
 footer p, footer h2, footer i, footer a {color: #fff;}
-footer > div > div:nth-child(1), footer > div > div:nth-child(2) {
-	padding-bottom: 20px;
-}
+footer > div > div:nth-child(1), footer > div > div:nth-child(2) {padding-bottom: 20px;}
 footer > div > div:nth-child(3) {
 	border-top: 1px solid #fff;
 	padding-top: 15px;
@@ -280,9 +269,6 @@ footer > div > div:nth-child(3) {
 footer i:nth-child(1) {margin-bottom: 10px;}
 footer a {text-decoration: none;}
 /*---------------------------- END FOOTER  -------------------------*/
-
-
-
 @media only screen and (min-width: 800px) {
 	#nav-btn-container {display: none;}
 	.sitenav-lg {display: block;}
@@ -329,7 +315,7 @@ footer a {text-decoration: none;}
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
 	}
-	#case-wrapper, #about > article {
+	#case-wrapper, #about > div {
 		width: 100%;
 		padding: 0 15px;	
 		box-sizing: border-box;
@@ -339,18 +325,13 @@ footer a {text-decoration: none;}
 		width: 100%;
 		text-align: left;
 	}
+	#about, #portfolio, #contact {padding-top: 70px;}
 	#about h1, #case-wrapper h1, #contact h1  {
 		letter-spacing: 20px;
-		padding-bottom: 15px;
-		text-align: center;
-		margin: 0 auto 15px auto;
 	}
-	#about h1:after, #case-wrapper h1:after {
+	#about h1:after, #case-wrapper h1:after, #contact h1:after {
 		transform: scaleX(0.15);
-		margin-left: -10px;
-	}
-	#contact h1:after {
-		transform: scaleX(0.15);
+		left: -10px;
 	}
 	.portfolio-item {
 		width: 48.5%;
@@ -360,19 +341,17 @@ footer a {text-decoration: none;}
 	.overlay {visibility: visible;}
 }
 @media only screen and (min-width: 1200px) {
-	#case-wrapper, #about > article, #tech-icons > div, form {
+	#case-wrapper, #about > div, #tech-icons > div, form {
 		width: 65%;
 		margin: 0 auto;
 	}
 	form {
-		display: -webkit-box;
+	  display: -webkit-box;
 	  display: -ms-flexbox;
 	  display: flex;
 	  justify-content: space-between;
 	}
-	form > div {
-		width: 49%;
-	}
+	fieldset {width: 49%;}
 	#contact h1:after {
 		transform: scaleX(0.1);
 	}
@@ -384,11 +363,7 @@ footer a {text-decoration: none;}
 	}
 	#case-wrapper > div {width: 100%;}
 	.icon-html5, .icon-css3, .icon-javascript {font-size: 150px;}
-	#about h1:after {
-		transform: scaleX(0.1);
-	}
-	#contact h1:after {
-		transform: scaleX(0.07);
-	}
+	#about h1:after {transform: scaleX(0.1);}
+	#contact h1:after {transform: scaleX(0.07);}
 }
 
