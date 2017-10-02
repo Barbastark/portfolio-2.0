@@ -10,8 +10,11 @@
 .open {
   z-index: 11;
 }
+.open span {
+  background: #fff!important;
+}
 #nav-icon span {
-  background: #fff;
+  background: #558ab6;
   display: block;
   height: 4px;
   opacity: 1;

@@ -8,6 +8,7 @@
 		<link rel="stylesheet" href="css/bundle.css">
 	</head>
 	<body>
+	<div id="lightbox" class="lightbox"></div>
 	<div id="site-wrapper">
 	<!--MOBILE NAVIGATION-->
 	   <nav class="sitenav-sm">
@@ -26,8 +27,8 @@
 		    </li>
 		  </ul>
 		</nav>
-		<!--JUMBOTRON-->
-		<header id="jumbotron">
+		<!--SITE HEADER-->
+		<header id="site-header">
 			<div class="nav-container">
 				<a id="logo" data-scroll href="#"><span>nl</span></a>
 		        <nav class="sitenav-lg">
@@ -49,12 +50,11 @@
 			        </button>
 		        </div>
 		    </div>
-			<section class="fixed-bg fixed-bg-1">
-				<div class="intro wow fadeIn animated" data-wow-delay="0.2s" data-wow-duration="1s" >
+			<section id="hero-image" data-type="background" data-speed="3">
+				<div id="hero-text" class="wow fadeIn animated" data-wow-delay="0.2s" data-wow-duration="1s" >
 					<h1 class="wow bounceInDown animated" data-wow-delay="0.2s" data-wow-duration="1s">NIKLAS LINDBERG</h1>
-					<h2 class="wow fadeIn animated" data-wow-delay="1.2s" data-wow-duration="1s">Frontend Utvecklare</h2>
-					<p class="wow fadeInDown animated" data-wow-delay="0.4s" data-wow-duration="1s">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-					<div id="swing" class="wow swing animated" data-wow-delay="2.5s" data-wow-duration="1s">
+					<h2></h2>
+					<div class="wow swing animated" data-wow-delay="2.5s" data-wow-duration="1s">
 		            	<a data-scroll href="#about"><i class="fa fa-chevron-down fa-4x"></i></a>
 		        	</div>
 				</div>
@@ -64,10 +64,9 @@
 		  	<div>
 		  		<h1>Om Mig</h1>
 		  		<p>Jag är en glad och driven frontend utvecklare med examen från Nackademins yrkeshögskola i Solna. Under utbildningen fick vi utöver HTML, CSS och Javascript även lära oss versionshantering i Git, byggverktyg med fokus på Webpack samt olika ramverk och bibliotek som Jquery, React och Bootstrap. Utöver detta läste vi även en kurs där vi fick lära oss grunderna i PHP, SQL samt CMS med fokus på Wordpress.</p>
-				<p>Nu efter examen ser jag fram emot att få chansen att tillämpa mina kunskaper arbetslivet. På kort sikt är mitt främsta mål att bli en riktigt duktig frontend utvecklare. Det som ligger närmast hjärtat är Javascript, men HTML och CSS är också väldigt roligt.<p> 
+				<p>Nu efter examen ser jag fram emot att få chansen att tillämpa mina kunskaper i arbetslivet. På kort sikt är mitt främsta mål att bli en riktigt duktig frontend utvecklare. Det som ligger närmast hjärtat är Javascript, men HTML och CSS är också väldigt roligt.<p> 
 				 <p>I ett lite längre perspektiv är min målsättning att lära mig mer om programmering på serversidan.</p>
-				<p>När det kommer till arbete är det viktigaste för mig att jag trivs med mina kollegor och att jag får möjlighet att utvecklas och lära mig nya saker. Vilken typ av projekt jag jobbar med är för mig mindre viktigt, huvudsaken är att jag får skriva kod.  
-				</p>
+				<p>När det kommer till arbete är det viktigaste för mig att jag trivs med mina kollegor och att jag får möjlighet att utvecklas och lära mig nya saker. Vilken typ av projekt jag jobbar med är för mig mindre viktigt, även om det inte är en nackdel om jag får ägna mig åt något som känns meningsfullt.</p>
 	  		</div>
 		  </section>
 		  <section id="tech-icons">
@@ -83,15 +82,37 @@
 		  		<div>
 				  	<h1>Portfolio</h1>
 				</div>
-		  	<article class="portfolio-item">
-		  		<figure class>
+			<article class="portfolio-item">
+		  		<figure>
+		  			<a href="portfolio/breakout/index.html" target="_blank">
+		  				<img src="img/breakout.png" alt="case image"/>
+		  				<div class="overlay"></div>
+		  			</a>
+		  		</figure>
+		  		<div>
+		  			<h2>Breakout Game</h2>
+		  			<p>Min egen tolkning av Steve Wozniaks klassiska spel. Detta är ett levande 
+		  			   hobbyprojekt och bör inte under några omständligheter betraktas som ett färdigt spel.  
+		  			</p>
+		  		</div>
+		  		<div class="divider"><div>
+		  		<div class="tech">
+		  			<span>
+		  				<span>HTML5</span>
+		  				<span>CSS3</span>
+		  				<span>JavaScript</span>
+		  			</span>
+		  		</div>
+		  	</article>
+		  	<article id="friendo" class="portfolio-item">
+		  		<figure>
 		  			<a href="#" target="_blank">
 		  				<img src="img/friendoapp.png" alt="case image"/>
 		  				<div class="overlay"></div>
 		  			</a>
 		  		</figure>
 		  		<div>
-		  			<h2>Friendo Events</h2>
+		  			<h2>Friendo Events (kommer inom kort)</h2>
 		  			<p>Ett webbgränssnitt till en eventskapartjänst som jag byggde tillsammans med en 
 		  			studiekompis under min första praktik.
 		  			</p>
@@ -290,6 +311,14 @@
 		</div>
 		<!-- CUSTOM SCRIPTS-->
 		<script src="js/main.js"></script>
+		<script src="js/lightbox.js"></script>
+		<script>
+		
+			let myLightbox = new LightBox();
+			myLightbox.initLightBox()
+		
+
+		</script>
 		<!-- PLUGINS -->
 		<script src="https://use.fontawesome.com/18d0d4a585.js"></script>
 		<script src="js/smooth-scroll.min.js"></script>
