@@ -1,88 +1,14 @@
 <!doctype html>
 <html>
 	<head>
-		<title></title>
+		<meta charset="utf-8">
+		<title>Multiplication Table</title>
+		<link rel="stylesheet" href="css/style.css">
 	</head>
-	<style>
-		*{
-			margin: 0;
-			padding: 0;
-			font-size: 10px;
-		}
-		html {
-			width: 100%;
-			height: 100%;
-			
-		    background-color: #27b292;
-		}
-		html, #questionContainer {
-			display: -webkit-flex;
-		    display: flex;
-		    -webkit-justify-content: center;
-		    justify-content: center;
-		    -webkit-flex-direction: column;
-		    flex-direction: column;
-		}
-		#wrapper {
-			margin: 0 auto;
-			border-radius: 5px;
-			background-color: #ffcc00;
-			width: 600px;
-			border: 2px solid #fff;
-			font-family: arial;
-			font-weight: bold;
-			text-align: center;
-			color: #fff;
-			padding: 60px 0 40px 0;
-			
-		}
-		#questionContainer {
-			height: 21rem;
-		}
-		
-		#questionContainer p {
-			font-size: 11rem;
-		}
-		#wrapper input {
-			background-color: #ffcc00;
-			font-family: arial;
-			font-size: 5rem;
-			color: #fff;
-			border: 2px solid #fff;
-			border-radius: 2px;
-			padding: 1rem 0;
-			width: 200px;
-			margin: 0 auto;
-			outline: none;
-			text-align: center;
-		}
-		#stats {
-			width: 100%;
-			display: -webkit-flex;
-		    display: flex;
-		    -webkit-justify-content: space-around;
-		    justify-content: space-around;
-		    -webkit-flex-direction: row;
-		    flex-direction: row;
-		}
-		#stats span {
-			font-size: 2.5rem;
-		}
-		#error {
-			color: red;
-			font-size: 1.3rem;
-			display: block;
-			height: 1.3rem;
-			margin-bottom: 1rem;
-		}
-		
-		
-	</style>
-	<body>
-		<div id="wrapper">
+	<div id="wrapper">
 			<div id="stats">
 				<span>Score: <span id="score">0</span></span>
-				<span>Fuckups: <span id="fuck-ups">0</span></span>
+				<span>Errors: <span id="errors">0</span></span>
 				<span>Level: <span id="level">1</span></span>
 			</div>
 			<div id="questionContainer">
@@ -90,69 +16,7 @@
 			</div>
 			<span id="error"></span>
 			<input id="answer" type="text" autofocus="true" autocomplete="off">
+			<script src="js/main.js"></script>
 		</div>
-		<script>
-			let levelUp = 0;
-			let score = 0;
-			let level = 1;
-			let fuckUps = 0;
-			let num1;
-			let num2;
-			let answer;
-			let userGuess;
-			const multiChar = "&times";
-			const userGuessInput = document.getElementById("answer");
-			const scoreContainer = document.getElementById("score");
-			const fuckUpsContainer = document.getElementById("fuck-ups");
-			const levelContainer = document.getElementById("level");
-			const question = document.getElementById("question");
-			const audio = new Audio('haha.wav');
-			const error = document.getElementById("error");
-
-			function rand() {
-				num1 = Math.floor(Math.random()*10)+1;
-				num2 = Math.floor(Math.random()*10)+1;
-				question.innerHTML = `${num1}${multiChar}${num2}`	
-			}
-			
-			document.addEventListener('keyup', e => {
-				if(e.keyCode === 13) {
-					userGuess = parseInt(userGuessInput.value);
-					answer = num1 * num2;
-					if(!isNaN(userGuess)) {
-						if(answer === userGuess) {
-							score++;
-							levelUp++;
-							scoreContainer.innerHTML = score; 
-							userGuessInput.value = "";
-							error.innerHTML = "";	
-							rand();
-						} else {
-							question.innerHTML = '<img src="nelson2.jpg" style="margin:18px 0 18px 0;" />';
-							audio.play()
-							error.innerHTML = "Fel svar!!"
-							setTimeout(function(){
-								fuckUps++;
-								fuckUpsContainer.innerHTML = fuckUps;
-								level--;
-								levelContainer.innerHTML = level;
-								userGuessInput.value = "";	
-								error.innerHTML = ""
-								rand();
-							},1000)
-						}
-						if(levelUp === 10) {
-							level++;
-							levelContainer.innerHTML = level;
-							levelUp = 0;
-						}
-					} else {
-						error.innerHTML = "Men jag vill ju ha en siffra ju &#128550;";
-						userGuessInput.value = "";
-					}	
-				}
-			});
-			rand();
-		</script>
 	</body>
 </html>

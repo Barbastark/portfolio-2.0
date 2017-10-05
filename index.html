@@ -85,7 +85,7 @@
 			<article class="portfolio-item">
 		  		<figure>
 		  			<a href="portfolio/breakout/index.html" target="_blank">
-		  				<img src="img/breakout.png" alt="case image"/>
+		  				<img src="img/breakout.jpg" alt="case image"/>
 		  				<div class="overlay"></div>
 		  			</a>
 		  		</figure>
@@ -105,14 +105,12 @@
 		  		</div>
 		  	</article>
 		  	<article id="friendo" class="portfolio-item">
-		  		<figure>
-		  			<a href="#" target="_blank">
-		  				<img src="img/friendoapp.png" alt="case image"/>
-		  				<div class="overlay"></div>
-		  			</a>
+		  		<figure id="friendo">
+		  			<img src="img/friendoapp.png" alt="case image"/>
+		  			<div class="overlay"></div>
 		  		</figure>
 		  		<div>
-		  			<h2>Friendo Events (kommer inom kort)</h2>
+		  			<h2>Friendo Events</h2>
 		  			<p>Ett webbgränssnitt till en eventskapartjänst som jag byggde tillsammans med en 
 		  			studiekompis under min första praktik.
 		  			</p>
@@ -126,12 +124,10 @@
 		  			</span>
 		  		</div>
 		  	  </article>
-		  	  <article class="portfolio-item">
-		  		<figure>
-		  			<a href="http://www.nikimember.se" target="_blank">
-		  				<img src="img/nikimember.png" alt="case image"/>
-		  				<div class="overlay"></div>
-		  			</a>
+		  	  <article  class="portfolio-item">
+		  		<figure id="nikimember">
+		  			<img src="img/nikimember.png" alt="case image"/>
+		  			<div class="overlay"></div>
 		  		</figure>
 		  		<div>
 		  			<h2>Nikimember</h2>
@@ -170,14 +166,14 @@
 		  	  </article>	
 		  	  <article class="portfolio-item">
 		  		<figure>
-		  			<a href="portfolio/Key-Charcode-Generator/index.html" target="_blank">
-		  				<img src="img/key_code.png" alt="case image"/>
+		  			<a href="portfolio/mathgame/index.html" target="_blank">
+		  				<img src="img/mathgame.jpg" alt="case image"/>
 		  				<div class="overlay"></div>
 		  			</a>
 		  		</figure>
 		  		<div>
-		  			<h2>Key/Charcode Generator</h2>
-		  			<p>Ett verktyg för att snabbt hitta character och key codes när man sitter och kodar.</p>
+		  			<h2>Multiplikationsspel</h2>
+		  			<p>Ett litet spel som jag skrev i syfte att motivera mina systerbarn att öva på multiplikationstabellen</p>
 		  		</div>
 		  		<div class="divider"><div>
 		  		<div class="tech">
@@ -273,20 +269,31 @@
 		  </section>
 		  <section id="contact">
 		  	  <h1>Kontakt</h1>
-			  <form action="php/submit.php" method="post">
+			  <form id="my_form" onsubmit="submitForm(); return false;">
 				  <fieldset class="wow bounceInLeft animated" data-wow-delay="0.1s" data-wow-duration="1s">
-				    <label for="firstname">Förnamn*</label>
-				    <input type="text" id="firstname" name="firstname" placeholder="Förnamn" required>
-				    <label for="lastname">Efternamn*</label>
-				    <input type="text" id="lastname" name="lastname" placeholder="Efternamn" required>
+				    <label for="fname">Förnamn*</label>
+				    <span id="error0"></span>
+				    <input class="field" type="text" id="fname" name="fname" placeholder="Förnamn">
+				    
+				    <label for="lname">Efternamn*</label>
+				    <span id="error1"></span>
+				    <input class="field" type="text" id="lname" name="lname" placeholder="Efternamn">
+				    
 					<label for="email">E-Post*</label>
-				    <input type="email" id="email" name="email" placeholder="E-Post" required>
+					<span id="error2"></span>
+				    <input class="field" type="email" id="email" name="email" placeholder="E-Post">
+
+				    <label for="spamblocker">Kontrollfråga*</label>
+				    <span id="error"></span>
+				    <input class="field" type="text" id="spamblocker" name="spamblocker" placeholder="2 + 2 = ?">
 				    <p>* Obligatoriska Fält</p>
 			      </fieldset>
 			      <fieldset class="wow bounceInRight animated" data-wow-delay="0.1s" data-wow-duration="1s">
 				    <label for="message">Meddelande*</label>
-				    <textarea id="message" name="message" placeholder="Skriv ett meddelande" requ></textarea>
-				    <input type="submit" name="submit" value="Skicka">
+				    <span id="error3"></span>
+				    <textarea class="field" id="msg" name="message" placeholder="Skriv ett meddelande"></textarea>
+				    <input id="btn-submit" type="submit" name="submit" value="Skicka">
+				    <span id="status"></span>
 				  </fieldset>
 			  </form>
 		  </section>
@@ -310,12 +317,41 @@
           </footer>
 		</div>
 		<!-- CUSTOM SCRIPTS-->
+		<script src="js/ajax_form.js"></script>
 		<script src="js/main.js"></script>
 		<script src="js/lightbox.js"></script>
 		<script>
-		
-			let myLightbox = new LightBox();
-			myLightbox.initLightBox()
+			
+			let nikiGallery = new LightBox(
+					document.querySelector("#lightbox"),
+					document.querySelector("#nikimember"),
+					 ["img/niki1.jpg", 
+				      "img/niki2.jpg", 
+				      "img/niki3.jpg",
+				      "img/niki4.jpg", 
+				      "img/niki5.jpg", 
+				      "img/niki6.jpg",
+				      "img/niki7.jpg", 
+				      "img/niki8.jpg"],
+				      true
+				);
+			
+			let friendoGallery = new LightBox(
+					document.querySelector("#lightbox"),
+					document.querySelector("#friendo"),
+					 ["img/friendo1.jpg", 
+				      "img/friendo2.jpg", 
+				      "img/friendo3.jpg",
+				      "img/friendo4.jpg", 
+				      "img/friendo5.jpg", 
+				      "img/friendo6.jpg",
+				      "img/friendo7.jpg"]
+				      
+				      
+				);
+
+			nikiGallery.initLightBox();
+			friendoGallery.initLightBox();
 		
 
 		</script>

@@ -1,5 +1,5 @@
 .lightbox {
-	background-color: rgba(0,0,0,0.0.5);
+	background-color: rgba(0,0,0,0.8);
 	opacity: 0;
 	display: flex;
 	flex-direction: column;
@@ -10,50 +10,44 @@
 	width: 100%;
 	height: 100%;
 	z-index: 100;
-	background-color: rgba(0,0,0,0.8);
+	-webkit-transition: opacity .4s ;
+	-o-transition: opacity .4s;
+	transition: opacity .4s;
 	opacity: 1;
-	-webkit-transition: .4s opacity;
-	-o-transition: .4s opacity;
-	transition: .4s opacity;
 	position: fixed;
 	top: 0;
 	left: 0;
 }
 
-#image-container {
-	background-color: #000;
+#lightbox #image-container {
+	gbackground-color: #000;
 	position: relative;
 	margin: 0 auto;
     padding: 0;
     max-width: 50%;
     max-height: 80%;
     overflow-y: scroll;
-
 }
 
-#image-container::-webkit-scrollbar-track {
-	background-color: rgba(255,255,255,0.7);
-	border-radius: 5px;
+#lightbox #image-container::-webkit-scrollbar-track {
+	background-color: #ccc;
 }
 
-#image-container::-webkit-scrollbar {
+#lightbox #image-container::-webkit-scrollbar {
 	width: 5px;
 	background-color: transparent;
-	border-radius: 5px;
 }
 
-#image-container::-webkit-scrollbar-thumb {
-	background-color: #000;
-	border-radius: 5px;
+#lightbox #image-container::-webkit-scrollbar-thumb {
+	background-color: #666;
 }
 
-.image {
+#lightbox .image {
 	width: 100%;
+	height: 100%;
 }
 
-#btn-prev, #btn-next {
-	
-	gwidth: 60px;
+#lightbox #btn-prev, #lightbox #btn-next {
 	height: 100%;
 	position: absolute;
 	z-index: 105;
@@ -63,21 +57,20 @@
 	opacity: 0;
 	border: 0;
 	outline: 0;
-	-webkit-transition: all .3s ease-in-out ;
-	-o-transition: all .3s ease-in-out ;
-	transition: all .3s ease-in-out ;
-	
+	-webkit-transition: opacity .3s ease-in-out ;
+	-o-transition: opacity .3s ease-in-out ;
+	transition: opacity .3s ease-in-out ;
 }
 
-#btn-prev:hover, #btn-next:hover {
-	-webkit-transition: all .3s ease-in-out ;
-	-o-transition: all .3s ease-in-out ;
-	transition: all .3s ease-in-out ;
+#lightbox #btn-prev:hover, #lightbox #btn-next:hover {
+	-webkit-transition: opacity .3s ease-in-out ;
+	-o-transition: opacity .3s ease-in-out ;
+	transition: opacity .3s ease-in-out ;
 	opacity: 1;
 	cursor: pointer;
 }
 
-#btn-prev {
+#lightbox #btn-prev {
 	left: 0;
 	padding: 0 40px 0 20px; 
 	background: -webkit-gradient(linear, left top, right top, from(rgba(0,0,0,0.5)), to(rgba(0,0,0,0.0)));
@@ -86,7 +79,7 @@
 	background: linear-gradient(90deg, rgba(0,0,0,0.5), rgba(0,0,0,0.0)); 
 }
 
-#btn-next {
+#lightbox #btn-next {
 	right: 0;
 	padding: 0 20px 0 40px; 
 	background: -webkit-gradient(linear, right top, left top, from(rgba(0,0,0,0.5)), to(rgba(0,0,0,0.0)));
@@ -95,3 +88,15 @@
 	background: linear-gradient(-90deg, rgba(0,0,0,0.5), rgba(0,0,0,0.0)); 
 }
 
+.disable-scroll {   
+    overflow-y: hidden;
+}
+
+@media only screen and (max-width: 800px) {
+	#lightbox #image-container {
+		margin: 0 auto;
+	    padding: 0;
+	    max-width: 85%;
+	    max-height: 85%;
+	}
+}

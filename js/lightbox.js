@@ -1,26 +1,27 @@
-function LightBox() {
-	this.lightBox = document.querySelector("#lightbox");
-	this.target = document.querySelector("#site-wrapper");
-	this.images = ["img/niki1.jpg", 
-				   "img/niki2.jpg", 
-				   "img/niki3.jpg",
-				   "img/niki4.jpg", 
-				   "img/niki5.jpg", 
-				   "img/niki6.jpg",
-				   "img/niki7.jpg", 
-				   "img/niki8.jpg"
-				   ]
+function LightBox(lightbox, target, images, scrollbar ) {
+
+	this.lightBox = lightbox;
+	this.target = target;
+	this.images = images;
+	this.scrollbar = scrollbar || false;
 	this.imageContainer;
 	this.imageNodes = [];
 	this.imageNodeIndex = 0;
+	
 }
 
-LightBox.prototype.initImageContainer = function() {
+LightBox.prototype.addImageContainer = function() {
 
 	let imageBox = document.createElement("div");
 		imageBox.setAttribute("id", "image-container");
+
+		if(!this.scrollbar) {
+			imageBox.setAttribute("style", "overflow: hidden;");
+		}
+
 		this.lightBox.appendChild(imageBox);
 		this.imageContainer = document.querySelector("#image-container");
+
 }
 
 LightBox.prototype.addImages = function() {
@@ -32,11 +33,70 @@ LightBox.prototype.addImages = function() {
 			imageNode.setAttribute("src", this.images[i]);
 			imageNode.setAttribute("style", "width: 100%;");
 			imageNode.setAttribute("style", "opacity:0");
+
 			this.imageNodes.push(imageNode);
 	}
 
-	this.imageContainer.appendChild(this.imageNodes[0]);
-	this.fadeIn(this.imageNodes[0]);
+	this.imageContainer.appendChild(this.imageNodes[this.imageNodeIndex]);
+	this.fadeIn(this.imageNodes[this.imageNodeIndex]);
+
+}
+
+LightBox.prototype.addButtons = function() {
+
+	let buttons = {};
+	let btnData = [["btn-prev","&lsaquo;","prev"],["btn-next", "&rsaquo;", "next"]];
+		
+	for(let i = 0; i < btnData.length; i++) {
+
+		let btn = document.createElement("button");
+			btn.setAttribute("id", btnData[i][0])
+			btn.innerHTML = btnData[i][1];
+
+		buttons[btnData[i][2]] = btn;
+		this.imageContainer.appendChild(buttons[btnData[i][2]]);
+
+	}
+	
+	this.imageContainer.addEventListener("scroll", () => {
+			
+			let yOffset = this.imageContainer.scrollTop;
+			
+			buttons.prev.setAttribute("style", "top:"+ yOffset +"px;");
+			buttons.next.setAttribute("style", "top:"+ yOffset +"px;");
+	});
+
+	buttons.next.addEventListener("click", () => {
+		
+		this.imageNodeIndex++;
+
+		if(this.imageNodeIndex > this.imageNodes.length-1) {
+			this.imageNodeIndex = 0;
+		}
+
+		this.changeImage();
+
+	});
+	
+	buttons.prev.addEventListener("click", () => {
+
+		this.imageNodeIndex--;
+
+		if(this.imageNodeIndex < 0) {
+			this.imageNodeIndex = this.imageNodes.length-1;
+		}
+
+		this.changeImage();
+
+	});
+}
+
+LightBox.prototype.changeImage = function() {
+
+	this.imageContainer.scrollTop = 0;
+	this.imageContainer.removeChild(this.imageContainer.childNodes[2]);
+	this.imageContainer.appendChild(this.imageNodes[this.imageNodeIndex]);
+	this.fadeIn(this.imageNodes[this.imageNodeIndex]);
 
 }
 
@@ -46,115 +106,55 @@ LightBox.prototype.fadeIn = function(el) {
 	let interval = setInterval(function() {
 
 		el.setAttribute("style", "opacity:"+opacity+";")
-		
 
 		if(opacity > 1) {
 			clearInterval(interval);
 		}
+
 		opacity+=0.025;
+
 	},10);
 
 	for(let i = 0; i < this.imageNodes.length; i++) {
 		this.imageNodes[i].setAttribute("style", "opacity: 0;")
 	}
-
-}
-
-LightBox.prototype.addButtons = function() {
-
-	let changeImage = () => {
-		
-		this.imageContainer.scrollTop = 0;
-		this.imageContainer.removeChild(this.imageContainer.childNodes[2]);
-		this.imageContainer.appendChild(this.imageNodes[this.imageNodeIndex]);
-		this.fadeIn(this.imageNodes[this.imageNodeIndex]);
-
-	}	
-
-	let prev = document.createElement("button");
-		prev.setAttribute("id", "btn-prev");
-		prev.innerHTML = "&lsaquo;";
-
-	let next = document.createElement("button");
-		next.setAttribute("id", "btn-next");
-		next.innerHTML = "&rsaquo;";
-
-	this.imageContainer.appendChild(prev);
-	this.imageContainer.appendChild(next);
-
-	let btnPrev = document.querySelector("#btn-prev");
-	let btnNext = document.querySelector("#btn-next");
-
-	btnNext.addEventListener("click", () =>{
-		
-		this.imageNodeIndex++;
-
-		if(this.imageNodeIndex > this.imageNodes.length-1) {
-			this.imageNodeIndex = 0;
-		}
-
-		changeImage();
-
-	});
-	
-	btnPrev.addEventListener("click", () => {
-
-		this.imageNodeIndex--;
-
-		if(this.imageNodeIndex < 0) {
-			this.imageNodeIndex = this.imageNodes.length-1;
-		}
-
-		changeImage();
-
-	});
 }
 
 LightBox.prototype.closeLightBox = function() {
-	document.getElementsByTagName("body")[0].removeAttribute("style", "overflow: hidden;");
-	this.lightBox.addEventListener("click", function(e) {
 
+	let self = this;
+
+	this.lightBox.addEventListener("click", function(e) {
+		
 		if(e.target.id === "lightbox") {
 
 			this.classList.remove("lightbox-show")
-
+			
 			while(this.hasChildNodes()) {
 				this.removeChild(this.lastChild);
 			}
-
-			this.imageNodes = [];
-			this.imageNodeIndex = 0;
+						
+			self.imageNodes = [];
+			self.imageNodeIndex = 0;
+			document.getElementsByTagName("body")[0].classList.remove("disable-scroll");
 
 		}
 	});
 }
 
-LightBox.prototype.scrollFix = function() {
-
-	let imgContainer = document.querySelector("#image-container");
-	let btnLeft = document.querySelector("#btn-prev");
-	let btnRight = document.querySelector("#btn-next");
-
-	imgContainer.addEventListener("scroll", function() {
-		yOffset = imgContainer.scrollTop;
-		
-		btnLeft.setAttribute("style", "top:"+ yOffset +"px;");
-		btnRight.setAttribute("style", "top:"+ yOffset +"px;");
-	});
-}
 LightBox.prototype.initLightBox = function() {
-	
+	console.log(window.innerHeight)
 	this.target.addEventListener("click", () => {
-		document.getElementsByTagName("body")[0].setAttribute("style", "overflow: hidden;");
+		
 		this.lightBox.classList.add("lightbox-show");
-		this.initImageContainer();
+		this.addImageContainer();
 		this.addButtons();
 		this.addImages();
 		this.closeLightBox();
-		this.scrollFix();
+		
+		document.getElementsByTagName("body")[0].classList.add("disable-scroll");
 
 	});
 }
-
 
 
